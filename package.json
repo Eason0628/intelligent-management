@@ -1,0 +1,20 @@
+{
+  "name": "intesim-emanager",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "spdm:serve": "vite serve packages/projects/INTESIM-SPDM/ --config packages/projects/INTESIM-SPDM/vite.config.js",
+    "spdm:build": "vite build packages/projects/INTESIM-SPDM/ --config packages/projects/INTESIM-SPDM/vite.config.js --emptyOutDir"
+  },
+  "dependencies": {
+    "vue": "^3.5.34"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.6",
+    "vite": "^8.0.12"
+  }
+}
