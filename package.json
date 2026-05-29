@@ -11,7 +11,8 @@
     "spdm:build": "vite build packages/projects/INTESIM-SPDM/ --config packages/projects/INTESIM-SPDM/vite.config.js --emptyOutDir"
   },
   "dependencies": {
-    "vue": "^3.5.34"
+    "vue": "^3.5.34",
+    "vue-router": "^5.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.6",
