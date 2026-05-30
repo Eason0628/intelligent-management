@@ -5,16 +5,36 @@ import bg from "../../assets/bg.jpg"
 import lgbg from "../../assets/lgbg.jpg"
 import { Button, Form, Input } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import http from "../../utils/http/http";
+import { login } from "../../api/users";
 
-// import { login } from "../../api/users";
-// import { setToken } from "../../store/login/authSlice";
-// import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
-// import { useState } from "react";
+import { setToken } from "../../store/login/authSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 function Login() {
+    // 表单验证
     const [form] = Form.useForm()
 
+    // RTK
+    const dispatch = useDispatch()
+
+    // 路由跳转
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState<boolean>(false)
+    function handleLogin() {
+        form.validateFields().then(async (res) => {
+            setLoading(true)
+            const { data: { token, username, btnAuth } } = await login(res);
+            setLoading(false)
+            dispatch(setToken(token))
+            sessionStorage.setItem("username", username)
+            sessionStorage.setItem("btnAuth", JSON.stringify(btnAuth))
+            navigate("/", { replace: true })
+        }).catch((err) => {
+            setLoading(false)
+            console.log(err)
+        })
+    }
     return (
         <div className="login" style={{ backgroundImage: `url(${bg})` }}>
             <div className="lgbg" style={{ backgroundImage: `url(${lgbg})` }}>
@@ -50,7 +70,7 @@ function Login() {
                             <Button
                                 type="primary"
                                 style={{ width: "100%" }}
-                            // onClick={handleLogin}
+                                onClick={handleLogin}
                             // loading={loading}
                             >
                                 登录

@@ -5,7 +5,7 @@ Mock.setup({
 
 //登录接口
 Mock.mock("https://www.demo.com/login", "post", (options: any) => {
-  //console.log("options",options.body)
+  console.log("options",options.body)
   const { username, password } = JSON.parse(options.body);
   if (username === "admin" && password === "admin123123") {
     return {
