@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import logo from "../../assets/logo.png"
 import icons from './iconList';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getMenu } from "../../api/users";
+import { setMenu } from '../../store/login/authSlice';
+import { Dispatch } from '@reduxjs/toolkit';
 
 // @ts-ignore: SCSS side-effect import without module declaration
 import "./index.scss"
@@ -23,18 +25,20 @@ interface MenuItemFromData {
     children?: MenuItemFromData[]
 }
 function NavLeft() {
-    const { menuList } = useSelector((state: any) => state.authSlice);
+    // const { menuList } = useSelector((state: any) => state.authSlice);
     const navigate = useNavigate()
     const [menuData, setMenuData] = useState<MenuItem[]>([]);
     const location = useLocation();
 
+    const dispatch = useDispatch<Dispatch>();
     // const selectedKey=location.pathname
     useEffect(() => {
         configMenu()
-    }, [menuList]);
+    }, []);
 
     async function configMenu() {
         const { data } = await getMenu();
+        dispatch(setMenu(data));
         const mappedMenuItems: MenuItem[] = mapMenuItems(data);
         setMenuData(mappedMenuItems);
     }
