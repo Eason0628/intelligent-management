@@ -1,4 +1,4 @@
- cd import { Button } from 'antd';
+import { Button } from 'antd';
 
 
 function Home() {

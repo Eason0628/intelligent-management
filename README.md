@@ -8,6 +8,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+1.react-app-env.d.ts 是React类型声明文件，用于在React项目中使用TypeScript。
+
 
 3.项⽬环境搭建
 1.使⽤creaet-react-app的ts模板创建项⽬
