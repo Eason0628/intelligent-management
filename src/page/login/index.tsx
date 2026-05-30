@@ -71,7 +71,7 @@ function Login() {
                                 type="primary"
                                 style={{ width: "100%" }}
                                 onClick={handleLogin}
-                            // loading={loading}
+                                loading={loading}
                             >
                                 登录
                             </Button>
