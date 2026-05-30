@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 const Home = React.lazy(() => import("../page/Home"));
-const Login = React.lazy(() => import("../page/Login"));
+const Login = React.lazy(() => import("../page/login/Login"));
 const NotFound = React.lazy(() => import("../page/404"));
 const router = createBrowserRouter([
     {
