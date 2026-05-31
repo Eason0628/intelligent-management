@@ -25,7 +25,7 @@ interface MenuItemFromData {
     children?: MenuItemFromData[]
 }
 function NavLeft() {
-    // const { menuList } = useSelector((state: any) => state.authSlice);
+    const { menuList } = useSelector((state: any) => state.authSlice);
     const navigate = useNavigate()
     const [menuData, setMenuData] = useState<MenuItem[]>([]);
     const location = useLocation();
@@ -37,9 +37,7 @@ function NavLeft() {
     }, []);
 
     async function configMenu() {
-        const { data } = await getMenu();
-        dispatch(setMenu(data));
-        const mappedMenuItems: MenuItem[] = mapMenuItems(data);
+        const mappedMenuItems: MenuItem[] = mapMenuItems(menuList);
         setMenuData(mappedMenuItems);
     }
 
@@ -53,6 +51,8 @@ function NavLeft() {
         }))
     }
 
+    //{ key }解构antd的Menu组件绑定的menuData数组，可以获取点击的菜单项的key值，MenuItem.key
+    //{ key: string }是解构之后指定类型的写法
     function handleClick({ key }: { key: string }) {
         navigate(key)
     }

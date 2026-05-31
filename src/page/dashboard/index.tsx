@@ -3,6 +3,7 @@ import { RadarChartOutlined, SnippetsOutlined, DollarOutlined, LaptopOutlined } 
 import ReactECharts from "echarts-for-react"
 import { getEnergyData } from "../../api/dashboard"
 import { useEffect, useState } from "react"
+// @ts-ignore
 import "./index.scss"
 const option2 = {
     title: {
