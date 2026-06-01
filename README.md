@@ -21,3 +21,13 @@ npm install react-router-dom
 npm install antd --save
 
 4.基础路由配置
+
+
+5.基础页面
+1.home
+2.user
+3.estate car
+4.finance
+5.contract surrender
+6.
+

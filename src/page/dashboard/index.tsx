@@ -110,6 +110,7 @@ function Dashboard() {
     const [data, setData] = useState(initalOption)
     useEffect(() => {
         const loadData = async () => {
+            // 这里data: apiData 其中: apiData是给data起了一个别名，避免与useState data冲突
             const { data: apiData } = await getEnergyData();
             const dataList = apiData.map((item: any) => ({
                 name: item.name,

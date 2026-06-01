@@ -454,6 +454,7 @@ Mock.mock("https://www.demo.com/userList", "post", (options: any) => {
     code: 200,
     message: "成功",
     data: Mock.mock({
+      // Mock.mock   list|70 代表随机生成70条数据，如果接收参数需要[``]
       [`list|${pageSize}`]: [
         {
           id: "@string('number',6)", //随机生成一个六位数字id
