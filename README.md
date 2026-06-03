@@ -29,5 +29,25 @@ npm install antd --save
 3.estate car
 4.finance
 5.contract surrender
-6.
+6.bill
+7.merchants
+8.todo:运营管理页面开发257
+9.equipment:封装table; 主要查看useDataList中type的使用
+  1.为什么函数类型返回值是promise类型？
+  2.Type封装
+
+
+10.
+.env文件定义的变量在所有环节都能被使用，开发、生产、测试环境,环境变量的定义必须以REACT_APP_开头，只识别这个前缀的变量，Vue是VUE_APP_API_开头的变量
+.env.production:生产环境的配置文件
+.env.test:测试环境的配置文件
+.env.development:开发环境的配置文件
+
+在调用的js里用process.env.REACT_APP_API_URL调用环境变量
+
+.env.development中定义的环境变量只能在开发环境下被访问到
+.env.production中定义的环境变量只能在打包后的项目中被访问到(生产环境)
+
+
+
 

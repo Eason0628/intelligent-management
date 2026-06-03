@@ -2,8 +2,8 @@ import axios,{AxiosInstance,InternalAxiosRequestConfig,AxiosResponse} from "axio
 import { message } from "antd";
 import { store } from "../../store";
 const http:AxiosInstance=axios.create({
-    // baseURL:process.env.REACT_APP_API_URL,
-    baseURL:"https://www.demo.com",
+    baseURL:process.env.REACT_APP_API_URL,
+    // baseURL:"https://www.demo.com",
     timeout:5000
 })
 
